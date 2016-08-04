@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="841.0" prefWidth="1150.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="timotei.FXMLDocumentController">
+   <children>
+      <TabPane fx:id="mapLogWindow" layoutX="3.0" layoutY="86.0" prefHeight="771.0" prefWidth="620.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Map">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="833.0" prefWidth="620.0">
+                     <children>
+                        <WebView fx:id="webWindow" prefHeight="686.0" prefWidth="635.0" />
+                        <Button layoutX="37.0" layoutY="692.0" mnemonicParsing="false" onAction="#onDeletePathsPressed" prefHeight="25.0" prefWidth="137.0" text="Delete paths" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Log">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="744.0" prefWidth="617.0">
+                     <children>
+                        <ListView fx:id="log" layoutX="-5.0" prefHeight="744.0" prefWidth="631.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <HBox layoutX="42.0" layoutY="14.0" prefHeight="65.0" prefWidth="217.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="66.0" prefWidth="203.0" style="-fx-border-color: orange;" text="SmartPostService" textFill="#c98c13">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Label>
+         </children>
+      </HBox>
+      <Label fx:id="inputLabel" layoutX="299.0" layoutY="30.0" prefHeight="17.0" prefWidth="67.0" text="$input" visible="false" />
+      <TabPane fx:id="tabPane" layoutX="625.0" prefHeight="859.0" prefWidth="525.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Main">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="830.0" prefWidth="525.0">
+                           <children>
+                              <HBox prefHeight="211.0" prefWidth="525.0">
+                                 <children>
+                                    <VBox prefHeight="164.0" prefWidth="271.0">
+                                       <children>
+                                          <Separator prefHeight="174.0" prefWidth="267.0" visible="false" />
+                                          <ComboBox fx:id="allPostsComboBox" onHidden="#onComboboxSelected" prefHeight="25.0" prefWidth="276.0" promptText="All available Smart Posts" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="164.0" prefWidth="262.0">
+                                       <children>
+                                          <TextArea fx:id="addPostInfo" editable="false" focusTraversable="false" prefHeight="220.0" prefWidth="258.0" />
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <Separator orientation="VERTICAL" prefHeight="32.0" prefWidth="179.0" visible="false" />
+                                                <Button mnemonicParsing="false" onAction="#addButtonPressed" prefHeight="40.0" prefWidth="116.0" text="Add" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Separator prefHeight="42.0" prefWidth="525.0" visible="false" />
+                              <HBox prefHeight="205.0" prefWidth="525.0">
+                                 <children>
+                                    <VBox prefHeight="164.0" prefWidth="271.0">
+                                       <children>
+                                          <Separator prefHeight="7.0" prefWidth="267.0" visible="false" />
+                                          <ComboBox fx:id="availablePostsComboBox" onHidden="#onAvailableComboboxSelected" prefHeight="25.0" prefWidth="276.0" promptText="Currently available Smart Posts" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="164.0" prefWidth="262.0">
+                                       <children>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <Separator orientation="VERTICAL" prefHeight="32.0" prefWidth="179.0" visible="false" />
+                                                <Button mnemonicParsing="false" onAction="#deleteButtonPressed" prefHeight="40.0" prefWidth="119.0" text="Delete" />
+                                             </children>
+                                          </HBox>
+                                          <TextArea fx:id="deletePostInfo" editable="false" focusTraversable="false" prefHeight="220.0" prefWidth="258.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Separator prefHeight="36.0" prefWidth="525.0" visible="false" />
+                              <HBox prefHeight="323.0" prefWidth="506.0">
+                                 <children>
+                                    <VBox prefHeight="429.0" prefWidth="233.0">
+                                       <children>
+                                          <ImageView fx:id="imageSendMail" fitHeight="192.0" fitWidth="264.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@mail.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Separator prefHeight="33.0" prefWidth="233.0" visible="false" />
+                                          <Button mnemonicParsing="false" onAction="#onSendPackagePressed" prefHeight="75.0" prefWidth="194.0" text="Send Package">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                    <Separator orientation="VERTICAL" prefHeight="429.0" prefWidth="52.0" visible="false" />
+                                    <VBox prefHeight="429.0" prefWidth="233.0">
+                                       <children>
+                                          <ImageView fx:id="imageManageItems" fitHeight="192.0" fitWidth="264.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../ManageItems.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Separator prefHeight="33.0" prefWidth="233.0" visible="false" />
+                                          <Button mnemonicParsing="false" onAction="#onManageItemsPressed" prefHeight="75.0" prefWidth="194.0" text="Manage Items">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Manage Items">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="itemViewComboBox" layoutY="139.0" onHidden="#itemSelectClicked" prefHeight="25.0" prefWidth="217.0" promptText="Select item" />
+                        <TextArea fx:id="itemInfoText" editable="false" layoutX="220.0" layoutY="46.0" prefHeight="235.0" prefWidth="290.0" />
+                        <Label layoutX="66.0" layoutY="78.0" text="View items:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="210.0" layoutY="383.0" text="Create items:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="-1.0" layoutY="415.0" prefHeight="2.0" prefWidth="514.0" />
+                        <TextField fx:id="inputItemName" layoutX="23.0" layoutY="434.0" onKeyReleased="#onItemInfoGiven" promptText="Name" />
+                        <TextArea fx:id="inputItemDescription" layoutX="247.0" layoutY="434.0" prefHeight="200.0" prefWidth="255.0" promptText="Description..." />
+                        <Button fx:id="createItemButton" layoutX="128.0" layoutY="725.0" mnemonicParsing="false" onAction="#onCreateItemClicked" prefHeight="65.0" prefWidth="237.0" text="CREATE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <CheckBox fx:id="breakableCheckBox" layoutX="244.0" layoutY="661.0" mnemonicParsing="false" text="Breakable" />
+                        <Label layoutX="23.0" layoutY="494.0" prefHeight="40.0" prefWidth="107.0" text="Dimensions (cm):">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Slider fx:id="sliderX" layoutX="23.0" layoutY="545.0" majorTickUnit="100.0" max="300.0" minorTickCount="19" onMouseReleased="#onDragDimensionDone" prefHeight="38.0" prefWidth="203.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                        <Slider fx:id="sliderY" layoutX="23.0" layoutY="591.0" majorTickUnit="100.0" max="300.0" minorTickCount="19" onMouseReleased="#onDragDimensionDone" prefHeight="38.0" prefWidth="203.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                        <Slider fx:id="sliderZ" blockIncrement="1.0" layoutX="23.0" layoutY="634.0" majorTickUnit="100.0" max="300.0" minorTickCount="19" onMouseReleased="#onDragDimensionDone" prefHeight="38.0" prefWidth="203.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                        <Label layoutX="9.0" layoutY="544.0" text="X" />
+                        <Label layoutX="10.0" layoutY="591.0" text="Y" />
+                        <Label layoutX="10.0" layoutY="634.0" text="Z" />
+                        <Button fx:id="deleteItemButton" layoutX="220.0" layoutY="298.0" mnemonicParsing="false" onAction="#onDeleteSelectedItemClicked" prefHeight="71.0" prefWidth="184.0" text="Delete selected item">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="17.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBackFromManageButtonClicked" text="&lt;&lt; Back" />
+                        <Label layoutX="340.0" layoutY="661.0" text="Item weight (kg):" />
+                        <TextField fx:id="inputItemWeight" layoutX="435.0" layoutY="660.0" onKeyReleased="#onItemInfoGiven" prefHeight="25.0" prefWidth="67.0" promptText="Weight..." />
+                        <Label fx:id="itemCreatedLabel" layoutX="196.0" layoutY="695.0" text="Item Created!" visible="false">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Send Mail">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBackFromSendButtonClicked" text="&lt;&lt; Back" />
+                        <Label layoutX="189.0" layoutY="27.0" text="Sender details:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="senderForename" layoutX="45.0" layoutY="84.0" onKeyReleased="#onSendInfoEntered" promptText="Forename" />
+                        <TextField fx:id="senderSurname" layoutX="45.0" layoutY="122.0" onKeyReleased="#onSendInfoEntered" promptText="Surname" />
+                        <ComboBox fx:id="itemViewSend" layoutX="11.0" layoutY="346.0" onHidden="#itemSelectClickedSend" prefHeight="25.0" prefWidth="217.0" promptText="Select item" />
+                        <Label layoutX="185.0" layoutY="178.0" text="Receiver details:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="180.0" layoutY="298.0" text="Package details:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="itemInfoTextSend" editable="false" layoutX="243.0" layoutY="346.0" prefHeight="235.0" prefWidth="268.0" />
+                        <ComboBox fx:id="packageClasses" layoutX="221.0" layoutY="589.0" onHidden="#onPackageClassChosen" prefHeight="25.0" prefWidth="217.0" promptText="Select package class" />
+                        <Button fx:id="infoHover" layoutX="459.0" layoutY="589.0" mnemonicParsing="false" onMouseEntered="#onInfoHovered" onMouseExited="#onInfoExited" text="i" />
+                        <TextField fx:id="receiverForename" layoutX="45.0" layoutY="203.0" onKeyReleased="#onSendInfoEntered" promptText="Forename" />
+                        <TextField fx:id="receiverSurname" layoutX="45.0" layoutY="242.0" onKeyReleased="#onSendInfoEntered" promptText="Surname" />
+                        <Button fx:id="sendPackageButton" disable="true" layoutX="145.0" layoutY="681.0" mnemonicParsing="false" onAction="#onPackageSent" prefHeight="57.0" prefWidth="184.0" text="SEND">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="packageSentLabel" layoutX="193.0" layoutY="648.0" text="Package Sent!" visible="false">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="availablePostsSender" layoutX="228.0" layoutY="110.0" onHidden="#onAvailableComboboxSelected" prefHeight="25.0" prefWidth="276.0" promptText="Currently available Smart Posts" />
+                        <ComboBox fx:id="availablePostsReceiver" layoutX="228.0" layoutY="230.0" onHidden="#onAvailableComboboxSelected" prefHeight="25.0" prefWidth="276.0" promptText="Currently available Smart Posts" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <DatePicker layoutX="267.0" layoutY="34.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,15 @@
+Thu Aug 04 22:14:02 EEST 2016 - Created new item: iPhone
+Thu Aug 04 22:15:51 EEST 2016
+Sender:   Markku Serkku
+Receiver: Jarkko Karppi
+Source:    	Pakettiautomaatti, S-market Äänekoski
+Destination: Pakettiautomaatti, ABC Toijala
+Kello, 3rd class package, 184 km
+ 
+Thu Aug 04 22:16:19 EEST 2016
+Sender:   Markku Serkku
+Receiver: Jarkko Karppi
+Source:    	Pakettiautomaatti, S-market Äänekoski
+Destination: Pakettiautomaatti, ABC Toijala
+Korppu, 3rd class package, 184 km, Item broke during transaction!
+ 

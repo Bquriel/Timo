@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="267.0" prefWidth="600.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="timotei.FXMLStartController">
+   <children>
+      <Label layoutX="138.0" layoutY="119.0" text="Would you like to use existing database?">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <HBox layoutX="73.0" layoutY="191.0" prefHeight="100.0" prefWidth="488.0">
+         <children>
+            <Button fx:id="newButton" mnemonicParsing="false" onAction="#onCreateNewDatabaseClicked" style="-fx-background-color: orange; -fx-border-color: black;" text="Create new database">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Separator orientation="VERTICAL" prefHeight="100.0" prefWidth="108.0" visible="false" />
+            <Button fx:id="existingButton" mnemonicParsing="false" onAction="#onUseExistingDatabaseClicked" prefHeight="30.0" prefWidth="206.0" style="-fx-background-color: orange; -fx-border-color: black;" text="Use existing database">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <Label layoutX="244.0" layoutY="14.0" text="TIMOTEI">
+         <font>
+            <Font size="30.0" />
+         </font>
+         <effect>
+            <Reflection />
+         </effect>
+      </Label>
+   </children>
+</AnchorPane>
