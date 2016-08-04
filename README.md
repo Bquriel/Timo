@@ -1,3 +1,3 @@
 # Timo
-Summer Camp harjoitustyö
+Summer Camp harjoitustyö.
 Ensimmäsillä käyttökerralla "Create new database". Muuten ohjelmasta ei ole iloa
